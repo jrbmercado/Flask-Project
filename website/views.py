@@ -24,7 +24,6 @@ def home():  # This function will run when we go to /
             new_note = Note(data=note, user_id=current_user.id)
             db.session.add(new_note)
             db.session.commit()
-            flash("Note added", category="success")
 
     # In our template, we can pass current user and check to see if it is authenticated
     return render_template("home.html", user=current_user)
