@@ -1,9 +1,9 @@
 {%extends "base.html"%}
 <!-- Allows us to overwrite any blocks in the base html -->
 
-{%block title%}Login{%endblock%} {%block content%}
+{%block title%}Login{%endblock%} {%block content%} <br />
 <form method="POST">
-    <h3 text-align="center">Login</h3>
+    <h3 align="center">Login</h3>
     <div class="form-group">
       <label for="email">Email Address</label>
       <input
@@ -26,4 +26,9 @@
       <button type="submit" class="btn btn-primary">Login</button>
     </div>
   </form>
+<h5 align="center">Sample Login Credentials:</h5>
+<h6 align="center">Email Address: delores.bishop@example.com</h6>
+<h6 align="center">Password: satchmo</h6>
+<p align="center">Please use guest user responsibly and leave behind some sample to do items for next guest.</p>
+<p align="center">Guest User Last Maintained 1/17/23</p>
 {%endblock%}
