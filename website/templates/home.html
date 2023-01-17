@@ -2,22 +2,28 @@
 <!-- Allows us to overwrite any blocks in the base html -->
 
 {%block title%}Home{%endblock%} {%block content%}
-<h1 text-align="center">Notes</h1>
+<h1 text-align="center">{{user.first_name}}'s To Do List</h1>
 <ul class="list-group list-group-flush" id="notes">
   {%for note in user.notes %}
   <li class="list-group-item">
     {{note.data}}
     <button type="button" class="close" onclick="deleteNote({{note.id}})">
-      <span aria-hidden="true">&times;</span>
+      <span aria-hidden="true">&check;</span>
     </button>
   </li>
   {%endfor%}
 </ul>
 <form method="POST">
-  <textarea name="note" id="note" class="form-control"></textarea>
+  <textarea
+    name="note"
+    id="note"
+    class="form-control"
+    style="resize: none; height: 40px"
+    maxlength="150"
+  ></textarea>
   <br />
   <div text-align="center">
-    <button type="submit" class="btn btn-primary">Add Note</button>
+    <button type="submit" class="btn btn-primary">Add Task</button>
   </div>
 </form>
 {%endblock%}

@@ -19,6 +19,8 @@ def home():  # This function will run when we go to /
 
         if len(note) < 1:
             flash("Note is too short", category="error")
+        elif len(note) > 150:
+            flash("Note is too long", category="error")
         else:
             # Create a new note
             new_note = Note(data=note, user_id=current_user.id)
